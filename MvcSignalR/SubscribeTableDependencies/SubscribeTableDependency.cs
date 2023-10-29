@@ -35,15 +35,15 @@ namespace MvcSignalR.SubscribeTableDependencies
                 var notification = e.Entity;
                 if (notification.MessageType == "All")
                 {
-                    await notificationHub.SendNotificationToAll(notification.Message);
+                    await _notificationHub.SendNotificationToAll(notification.Message);
                 }
                 else if (notification.MessageType == "Personal")
                 {
-                    await notificationHub.SendNotificationToClient(notification.Message, notification.Username);
+                    await _notificationHub.SendNotificationToClient(notification.Message, notification.Username);
                 }
                 else if (notification.MessageType == "Group")
                 {
-                    await notificationHub.SendNotificationToGroup(notification.Message, notification.Username);
+                    await _notificationHub.SendNotificationToGroup(notification.Message, notification.Username);
                 }
             }
         }

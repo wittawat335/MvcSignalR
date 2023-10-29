@@ -1,4 +1,6 @@
-﻿namespace MvcSignalR.MiddlewareExtensions
+﻿using MvcSignalR.SubscribeTableDependencies;
+
+namespace MvcSignalR.MiddlewareExtensions
 {
     public static class ApplicationBuilderExtension
     {
@@ -7,7 +9,7 @@
         {
             var serviceProvider = applicationBuilder.ApplicationServices;
             var service = serviceProvider.GetService<T>();
-            service?.SubscribeTableDependency(connectionString);
+            service?.NotiTableDependency(connectionString);
         }
     }
 }

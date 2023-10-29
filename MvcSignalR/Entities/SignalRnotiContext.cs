@@ -4,9 +4,9 @@ namespace MvcSignalR.Entities;
 
 public partial class SignalRnotiContext : DbContext
 {
-    public SignalRnotiContext()
-    {
-    }
+    //public SignalRnotiContext()
+    //{
+    //}
 
     public SignalRnotiContext(DbContextOptions<SignalRnotiContext> options)
         : base(options)
@@ -67,8 +67,7 @@ public partial class SignalRnotiContext : DbContext
                 .IsUnicode(false);
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        //OnModelCreatingPartial(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
